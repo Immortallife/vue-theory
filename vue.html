@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let person = {}
+        // Object.defineProperty(person,'name',{
+        //     value:'jack',
+        //     configurable:true,
+        //     writable:false
+        // })
+        // person['name'] = 'rose'
+        // Object.defineProperty(person,'name',{
+        //     value:'rose',
+        // })
+        // writable:true
+        // console.log(person.name) //rose
+        // let Person = {}
+        // let temp = null
+        // Object.defineProperty(Person,'name',{
+        //     get: function(){
+        //         return temp
+        //     },
+        //     set: function(val){
+        //         temp = val
+        //     }
+        // })
+        // Person.name = 'jack'
+        // console.log(Person.name)
+        let Person = {}
+        Object.defineProperty(Person,'name',{
+            value: 'jack',
+            // 通过属性定义的方式修改属性值
+            configurable: false,
+            // 通过赋值的方式修改属性值
+            writable: true
+        })
+        // 可以通过定义属性的方式修改属性值，因为configurable 为 true
+        Object.defineProperty(Person,'name',{
+            value:'rose'
+        })
+        console.log(Person.name) // rose
+        //  不可以通过赋值的方式修改属性值，因为writable 为 false
+        Person.name = 'linda'
+        console.log(Person.name) // rose
+
+    </script>
+</body>
+</html>

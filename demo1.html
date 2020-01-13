@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div"></div>
+    <input type="text" id="inp">
+    <script>
+      var div = document.querySelector('#div')
+      var inp = document.querySelector('#inp')
+      let obj = {}
+      Object.defineProperty(obj,'name',{
+        get: function () {
+          return val
+        },
+        set: function (newVal) {
+          inp.value = newVal
+          div.innerHTML = newVal
+        }
+      })
+      inp.addEventListener('input',function(e){
+        obj.name = e.target.value
+      })
+      var a = []
+      console.log(typeof a)
+    </script>
+    <script>
+  
+    </script>
+</body>
+</html>
